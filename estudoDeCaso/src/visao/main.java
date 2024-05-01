@@ -103,44 +103,81 @@ public class main {
 			    break;
 			}
 			case 4: {
-				for (int i = 0; i < vetor.length; i++) {
-					System.out.println(vetor[i]);
-				}
-				System.out.println("Informe qual Produto desaja olhar");
-				String procurar = leitor.nextLine();
-				for (int i = 0; i < vetor.length; i++) {
-					if (vetor[i] == procurar) {
-						System.out.println(vetor[i]);
-					}
-					break;
-				}
-
+			    System.out.println("Informe o nome do produto que deseja pesquisar:");
+			    String nomeProduto = leitor.nextLine();
+			    boolean produtoEncontrado = false;
+			    for (Produto produto : estoque) {
+			        if (produto.getNome().equals(nomeProduto)) {
+			            System.out.println("Produto encontrado:");
+			            System.out.println("Data de Chegada: " + produto.getDataChegada());
+			            System.out.println("Data de Validade: " + produto.getDataValidade());
+			            System.out.println("Fabricante: " + produto.getFabricante());
+			            System.out.println("Nome: " + produto.getNome());
+			            System.out.println("Qualidade: " + produto.getQualidade());
+			            System.out.println("Preço de Mercado: " + produto.getPrecoMercado());
+			            System.out.println("Quantidade: " + produto.getQuantidade());
+			            System.out.println();
+			            produtoEncontrado = true;
+			            break;
+			        }
+			    }
+			    if (!produtoEncontrado) {
+			        System.out.println("Produto não encontrado.");
+			    }
+			    break;
 			}
 
 			case 5: {
-				while (!sair.equals("sair")) {
-					for (int i = 0; i < vetor.length; i++) {
-						System.out.println(vetor[i]);
-					}
-					System.out.println("Informe qual produto deseja alterar");
-					String alterar = leitor.nextLine();
-					for (int i = 0; i < vetor.length; i++) {
-						if (vetor[i] == alterar) {
-							System.out.println("Informe o qual sera o novo produto a ser armazenado	");
-							String novo = leitor.nextLine();
-							vetor[i] = novo;
-						}
+				
+			    System.out.println("Informe o nome do produto que deseja editar:");
+			    String newProduto = leitor.nextLine();
+			    
+			    for (Produto produto : estoque) {
+			        if (produto.getNome().equals(newProduto)) {
+			            System.out.println("Produto encontrado. Informe os novos dados.");
 
-						System.out.println("Desejas adicionar algo mais?(Digite sair para sair)");
-						sair = leitor.nextLine();
-					}
-					break;
-				}
+			            System.out.println("Data de Chegada:");
+			            String NewDataChegada = leitor.nextLine();
+			            produto.setDataChegada(NewDataChegada);
 
+			            System.out.println("Data de Validade:");
+			            String NewDataValidade = leitor.nextLine();
+			            produto.setDataValidade(NewDataValidade);
+
+			            System.out.println("Fabricante:");
+			            String NewFabricante = leitor.nextLine();
+			            produto.setFabricante(NewFabricante);
+
+			            System.out.println("Nome:");
+			            String NewNome = leitor.nextLine();
+			            produto.setNome(NewNome);
+
+			            System.out.println("Preço de Mercado:");
+			            Float NewPrecoMercado = Float.valueOf(leitor.nextLine());
+			            produto.setPrecoMercado(NewPrecoMercado);
+
+			            System.out.println("Qualidade:");
+			            String NewQualidade = leitor.nextLine();
+			            produto.setQualidade(NewQualidade);
+
+			            System.out.println("Quantidade:");
+			            Integer NewQuantidade = Integer.valueOf(leitor.nextLine());
+			            produto.setQuantidade(NewQuantidade);
+
+			            System.out.println("Produto editado com sucesso.");
+			            break;
+			        }
+			    }
+			    break;
 			}
+
+
+			
 			default:
-			}
+			
 		}
 
 	}
 }
+}
+
