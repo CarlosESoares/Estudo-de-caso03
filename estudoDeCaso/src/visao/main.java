@@ -60,6 +60,8 @@ public class main {
 					System.out.println("Quantidade");
 					String B = leitor.nextLine();
 					Integer Quantidade = Integer.valueOf(B);
+					System.out.println("ID do produto");
+					String c = leitor.nextLine();
 
 					// criando o obj de produto
 					Produto p = new Produto();
@@ -70,6 +72,7 @@ public class main {
 					p.setPrecoMercado(PrecoMercado);
 					p.setQualidade(Qualidade);
 					p.setQuantidade(Quantidade);
+					p.setProdutoID(c);
 
 					// e adiciona o produto no arraylist
 					estoque.add(p);
@@ -89,17 +92,17 @@ public class main {
 					System.out.println("Qualidade: " + produto.getQualidade());
 					System.out.println("Preço de Mercado: " + produto.getPrecoMercado());
 					System.out.println("Quantidade: " + produto.getQuantidade());
-					System.out.println();
+					System.out.println("Id do Produto:" + produto.getProdutoID());
 				}
 				break;
 			}
 
 			case 3: {
 				System.out.println("Informe o nome do produto que deseja excluir:");
-				String nomeProduto = leitor.nextLine();
+				String ProdutoID = leitor.nextLine();
 				for (Iterator<Produto> iterator = estoque.iterator(); iterator.hasNext();) {
 					Produto produto = iterator.next();
-					if (produto.getNome().equals(nomeProduto)) {
+					if (produto.getProdutoID().equals(ProdutoID)) {
 						iterator.remove();
 						System.out.println("Produto removido com sucesso.");
 						break;
@@ -121,7 +124,7 @@ public class main {
 						System.out.println("Qualidade: " + produto.getQualidade());
 						System.out.println("Preço de Mercado: " + produto.getPrecoMercado());
 						System.out.println("Quantidade: " + produto.getQuantidade());
-						System.out.println();
+						System.out.println("Id do produto" + produto.getProdutoID());
 						produtoEncontrado = true;
 						break;
 					}
@@ -168,7 +171,10 @@ public class main {
 						System.out.println("Quantidade:");
 						Integer NewQuantidade = Integer.valueOf(leitor.nextLine());
 						produto.setQuantidade(NewQuantidade);
-
+						
+						System.out.println("Id do produto");
+						String NewIdProduto = leitor.nextLine();
+						produto.setProdutoID(NewIdProduto);
 						System.out.println("Produto editado com sucesso.");
 						break;
 					}

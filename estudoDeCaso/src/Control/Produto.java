@@ -16,9 +16,19 @@ public class Produto {
 	private String Fabricante;
 
 	private Integer Quantidade;
+	
+	private String ProdutoID;
 
 	
 
+
+	public String getProdutoID() {
+		return ProdutoID;
+	}
+
+	public void setProdutoID(String produtoID) {
+		ProdutoID = produtoID;
+	}
 
 	public Float getPrecoMercado() {
 		return PrecoMercado;
