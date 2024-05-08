@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-import Control.Produto;
+import model.Produto;
 
 public class main {
 
