@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import Control.ProdutoDAO;
 import model.Produto;
 
 public class main {
@@ -42,41 +43,11 @@ public class main {
 			case 1: {
 				while (!sair.equals("sair")) {
 
-//					// pegar via scanner tas as informacoes dos produtos
-					System.out.println("Adicione os valor do produto");
-					System.out.println("Data chegada");
-					String DataC = leitor.nextLine();
-					System.out.println("data de validade");
-					String DataValidade = leitor.nextLine();
-					System.out.println("Fabicante");
-					String Fabricante = leitor.nextLine();
-					System.out.println("Nome");
-					String Nome = leitor.nextLine();
-					System.out.println("preço mercado");
-					String a = leitor.nextLine();
-					Float PrecoMercado = Float.valueOf(a);
-					System.out.println("Qualidade");
-					String Qualidade = leitor.nextLine();
-					System.out.println("Quantidade");
-					String B = leitor.nextLine();
-					Integer Quantidade = Integer.valueOf(B);
-					System.out.println("ID do produto");
-					String c = leitor.nextLine();
-
-					// criando o obj de produto
-					Produto p = new Produto();
-					p.setDataChegada(DataC);
-					p.setDataValidade(DataValidade);
-					p.setFabricante(Fabricante);
-					p.setNome(Nome);
-					p.setPrecoMercado(PrecoMercado);
-					p.setQualidade(Qualidade);
-					p.setQuantidade(Quantidade);
-					p.setProdutoID(c);
-
-					// e adiciona o produto no arraylist
-					estoque.add(p);
-
+				Produto p = new Produto();
+				p.setNome("Lucas");
+				
+				ProdutoDAO dao = new ProdutoDAO();
+				dao.inserir(p);
 					System.out.println("Desejas adicionar algo mais?(Digite sair para sair)");
 					sair = leitor.nextLine();
 					break;

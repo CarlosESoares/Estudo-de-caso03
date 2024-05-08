@@ -18,9 +18,19 @@ public class Produto {
 	private Integer Quantidade;
 	
 	private String ProdutoID;
+	
+	private Integer Id;
 
 	
 
+
+	public Integer getId() {
+		return Id;
+	}
+
+	public void setId(Integer id) {
+		Id = id;
+	}
 
 	public String getProdutoID() {
 		return ProdutoID;
