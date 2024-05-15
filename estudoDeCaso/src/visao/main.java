@@ -10,20 +10,12 @@ public class main {
     public static void main(String[] args) {
         ProdutoDAO dao = ProdutoDAO.getInstancia();
 
-        Produto AddProt = new Produto();
-        AddProt.setDataChegada("28/06/2020");
-        AddProt.setDataValidade("29/06/2023");
-        AddProt.setFabricante("Gustavo");
-        AddProt.setNome("Lombra");
-        AddProt.setPrecoMercado((float) 24.90);
-        AddProt.setQualidade("Duvidosa");
-        AddProt.setQuantidade(20);
+      
 
         Scanner leitor = new Scanner(System.in);
         int op = 1;
 
-        ArrayList<Produto> estoque = new ArrayList<>();
-        estoque.add(AddProt);
+     
 
         while (op >= 1 && op <= 5) {
             System.out.println("Escolha uma opcao");
@@ -42,7 +34,38 @@ public class main {
                     // Criando um novo produto
                     Produto novoProduto = new Produto();
                     // Defina os atributos do novo produto conforme necessário
-                    int id = produtoDAO.inserir(novoProduto);
+        			System.out.println("Adicione os valor do produto"); 
+        			
+        			System.out.println("data de chegada"); 
+        			String DataC = leitor.nextLine(); 
+        			
+        			System.out.println("Data de validade");
+        			String DataValidade = leitor.nextLine();
+        			
+        			System.out.println("Fabricante");
+        			String Fabricante = leitor.nextLine(); 
+        			
+        			System.out.println("Nome:");
+        			String Nome = leitor.nextLine(); 
+        			 
+        			System.out.println("Preço mercado");
+        			String a = leitor.nextLine(); 
+        			Float PrecoMercado = Float.valueOf(a); 
+        			 System.out.println("qualidade");
+        			String Qualidade = leitor.nextLine(); 
+        			 System.out.println("quantidade");
+        			String B = leitor.nextLine(); 
+        			 Integer Quantidade = Integer.valueOf(B); 
+        			 
+        			 novoProduto.setDataChegada(DataC);
+        			 novoProduto.setDataValidade(DataValidade);
+        			 novoProduto.setFabricante(Fabricante);
+        			 novoProduto.setNome(Nome);
+        			 novoProduto.setPrecoMercado(PrecoMercado);
+        			 novoProduto.setQualidade(Qualidade);
+        			 novoProduto.setQuantidade(Quantidade);
+
+        		                    int id = produtoDAO.inserir(novoProduto);
                     if (id != -1) {
                         System.out.println("Produto adicionado com sucesso. ID do Produto: " + id);
                     } else {

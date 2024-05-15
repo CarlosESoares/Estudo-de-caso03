@@ -30,38 +30,6 @@ public class ProdutoDAO {
             geradorId++;
             estoque.add(produto);
         	
-			System.out.println("Adicione os valor do produto"); 
-			
-			System.out.println("data de chegada"); 
-			String DataC = leitor.nextLine(); 
-			
-			System.out.println("Data de validade");
-			String DataValidade = leitor.nextLine();
-			
-			System.out.println("Fabricante");
-			String Fabricante = leitor.nextLine(); 
-			
-			System.out.println("Nome:");
-			String Nome = leitor.nextLine(); 
-			 
-			System.out.println("Preço mercado");
-			String a = leitor.nextLine(); 
-			Float PrecoMercado = Float.valueOf(a); 
-			 System.out.println("qualidade");
-			String Qualidade = leitor.nextLine(); 
-			 System.out.println("quantidade");
-			String B = leitor.nextLine(); 
-			 Integer Quantidade = Integer.valueOf(B); 
-			 
-			 produto.setDataChegada(DataC);
-			 produto.setDataValidade(DataValidade);
-			 produto.setFabricante(Fabricante);
-			 produto.setNome(Nome);
-			 produto.setPrecoMercado(PrecoMercado);
-			 produto.setQualidade(Qualidade);
-			 produto.setQuantidade(Quantidade);
-
-		
             return produto.getId();
         }
         return -1;
