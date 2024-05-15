@@ -10,6 +10,7 @@ public class main {
     public static void main(String[] args) {
         ProdutoDAO dao = ProdutoDAO.getInstancia();
 
+        Produto novoProduto = new Produto();
       
 
         Scanner leitor = new Scanner(System.in);
@@ -32,7 +33,7 @@ public class main {
                     // Obtendo a instância única de ProdutoDAO
                     ProdutoDAO produtoDAO = ProdutoDAO.getInstancia();
                     // Criando um novo produto
-                    Produto novoProduto = new Produto();
+ 
                     // Defina os atributos do novo produto conforme necessário
         			System.out.println("Adicione os valor do produto"); 
         			
@@ -76,18 +77,18 @@ public class main {
                 case 2: {
                     ProdutoDAO produtoDAO = ProdutoDAO.getInstancia();
                     ArrayList<Produto> produtos = produtoDAO.listar();
-                    if (produtos.isEmpty()) {
+                    if (novoProduto.isEmpty()) {
                         System.out.println("Nenhum produto no estoque.");
                     } else {
                         for (Produto produto : produtos) {
-                            System.out.println("Data de Chegada: " + produto.getDataChegada());
-                            System.out.println("Data de Validade: " + produto.getDataValidade());
-                            System.out.println("Fabricante: " + produto.getFabricante());
-                            System.out.println("Nome: " + produto.getNome());
-                            System.out.println("Qualidade: " + produto.getQualidade());
-                            System.out.println("Preço de Mercado: " + produto.getPrecoMercado());
-                            System.out.println("Quantidade: " + produto.getQuantidade());
-                            System.out.println("Id do Produto: " + produto.getId());
+                            System.out.println("Data de Chegada: " + novoProduto.getDataChegada());
+                            System.out.println("Data de Validade: " + novoProduto.getDataValidade());
+                            System.out.println("Fabricante: " + novoProduto.getFabricante());
+                            System.out.println("Nome: " + novoProduto.getNome());
+                            System.out.println("Qualidade: " + novoProduto.getQualidade());
+                            System.out.println("Preço de Mercado: " + novoProduto.getPrecoMercado());
+                            System.out.println("Quantidade: " + novoProduto.getQuantidade());
+                            System.out.println("Id do Produto: " + novoProduto.getId());
                         }
                     }
                     break;
@@ -182,11 +183,20 @@ public class main {
                             default:
                                 System.out.println("Opção inválida.");
                         }
+                        
+                        // Após editar o produto, chame o método editar do ProdutoDAO
+                        boolean editado = produtoDAO.editar(produtoExistente);
+                        if (editado) {
+                            System.out.println("Produto editado com sucesso.");
+                        } else {
+                            System.out.println("Falha ao editar o produto.");
+                        }
                     } else {
                         System.out.println("Produto não encontrado.");
                     }
                     break;
                 }
+
             }
         }
     }

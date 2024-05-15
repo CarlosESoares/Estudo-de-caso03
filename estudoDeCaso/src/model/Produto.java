@@ -17,7 +17,6 @@ public class Produto {
 
 	private Integer Quantidade;
 	
-	private String ProdutoID;
 	
 	private Integer Id;
 
@@ -31,15 +30,7 @@ public class Produto {
 	public void setId(Integer id) {
 		Id = id;
 	}
-
-	public String getProdutoID() {
-		return ProdutoID;
-	}
-
-	public void setProdutoID(String produtoID) {
-		ProdutoID = produtoID;
-	}
-
+	
 	public Float getPrecoMercado() {
 		return PrecoMercado;
 	}
@@ -94,6 +85,11 @@ public class Produto {
 
 	public void setDataChegada(String dataChegada) {
 		DataChegada = dataChegada;
+	}
+
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 
