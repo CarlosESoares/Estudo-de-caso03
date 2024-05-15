@@ -65,7 +65,6 @@ public class ProdutoDAO {
 				produto.setPrecoMercado(novoProduto.getPrecoMercado());
 				produto.setQualidade(novoProduto.getQualidade());
 				produto.setQuantidade(novoProduto.getQuantidade());
-				System.out.println("teste");
 				return true;
 			}
 		}
