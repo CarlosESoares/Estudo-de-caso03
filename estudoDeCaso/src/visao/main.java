@@ -64,7 +64,7 @@ public class main {
                             System.out.println("Qualidade: " + produto.getQualidade());
                             System.out.println("Preço de Mercado: " + produto.getPrecoMercado());
                             System.out.println("Quantidade: " + produto.getQuantidade());
-                            System.out.println("Id do Produto: " + produto.getProdutoID());
+                            System.out.println("Id do Produto: " + produto.getId());
                         }
                     }
                     break;

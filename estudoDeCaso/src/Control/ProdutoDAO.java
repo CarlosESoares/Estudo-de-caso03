@@ -52,6 +52,14 @@ public class ProdutoDAO {
 			 System.out.println("quantidade");
 			String B = leitor.nextLine(); 
 			 Integer Quantidade = Integer.valueOf(B); 
+			 
+			 produto.setDataChegada(DataC);
+			 produto.setDataValidade(DataValidade);
+			 produto.setFabricante(Fabricante);
+			 produto.setNome(Nome);
+			 produto.setPrecoMercado(PrecoMercado);
+			 produto.setQualidade(Qualidade);
+			 produto.setQuantidade(Quantidade);
 
 		
             return produto.getId();
